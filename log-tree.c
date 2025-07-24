@@ -456,7 +456,7 @@ void fmt_output_subject(struct strbuf *filename,
 		strbuf_addstr(filename, "-");
 		strbuf_release(&temp);
 	}
-	strbuf_addf(filename, "%04d-%s", nr, subject);
+	strbuf_addf(filename, "%05d-%s", nr, subject);
 
 	if (max_len < filename->len)
 		strbuf_setlen(filename, max_len);

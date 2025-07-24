@@ -2200,9 +2200,9 @@ int cmd_format_patch(int argc,
 	if (!fmt_patch_suffix)
 		fmt_patch_suffix = cfg.fmt_patch_suffix;
 
-	/* Make sure "0000-$sub.patch" gives non-negative length for $sub */
-	if (cfg.log.fmt_patch_name_max <= cast_size_t_to_int(strlen("0000-") + strlen(fmt_patch_suffix)))
-		cfg.log.fmt_patch_name_max = strlen("0000-") + strlen(fmt_patch_suffix);
+	/* Make sure "00000-$sub.patch" gives non-negative length for $sub */
+	if (cfg.log.fmt_patch_name_max <= cast_size_t_to_int(strlen("00000-") + strlen(fmt_patch_suffix)))
+		cfg.log.fmt_patch_name_max = strlen("00900-") + strlen(fmt_patch_suffix);
 
 	if (cover_from_description_arg)
 		cfg.cover_from_description_mode = parse_cover_from_description(cover_from_description_arg);
